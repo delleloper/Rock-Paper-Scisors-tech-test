@@ -9,18 +9,6 @@ namespace Delleloper.RPSTechTest
         [SerializeField] private Image image;
         private Button button;
 
-        public void Awake()
-        {
-            if (GameManager.Instance.IsClassic)
-            {
-                if (type == PlayType.SPOCK || type == PlayType.LIZARD)
-                {
-                    gameObject.SetActive(false);
-                    return;
-                }
-            }
-        }
-
         public void setup(Sprite sprite, PlayType playType, System.Action<PlayType> playerChoice)
         {
             image.sprite = sprite;

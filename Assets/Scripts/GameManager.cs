@@ -98,16 +98,25 @@ namespace Delleloper.RPSTechTest
 
         public void GameOver()
         {
-           Debug.Log("GAME OVER");
+            Debug.Log("GAME OVER");
+            onGameOver.Invoke();
         }
 
         public void DecreaseGamesCount()
         {
-            Games -= 1;
             if (Games == 0)
             {
                 GameOver();
             }
+            else
+            {
+                Games -= 1;
+            }
+        }
+
+        public void SetGames(int value)
+        {
+            Games = value;
         }
     }
 
