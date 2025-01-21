@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: dc0b34819adc5d048ac2923f468284ab
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngegg_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 302
+        width: 211
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3edea735888db4b81586883c187f50
+      internalID: -1499987768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngegg_1
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 335
+        width: 340
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48e5607a10e2a542aca29b595ec8784
+      internalID: 1014245835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngegg_2
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 342
+        width: 352
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb08cec3dfd7434793bd3acb685da45
+      internalID: 1965432581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngegg_3
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 288
+        width: 196
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b39e43b2d7bebd4fb63d8bfed2de2cd
+      internalID: -1632960392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngegg_4
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 265
+        width: 236
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f461ac2d80c3fd449a98b7696c08ed8a
+      internalID: -152898520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngegg_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109
+        width: 2100
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29680924a6562f428e057692dd7fb3a
+      internalID: -683541254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -1050, y: -242.38654}
+      - {x: 1050, y: -242.38654}
+      - {x: 1050, y: -92.75256}
+      - {x: -1050, y: -92.75256}
+    - - {x: 658.3008, y: 245.46121}
+      - {x: 643.9453, y: 217.78917}
+      - {x: 643.9453, y: 3.5871158}
+      - {x: 736.23047, y: -86.603226}
+      - {x: 877.7344, y: -86.603226}
+      - {x: 883.8867, y: -39.458275}
+      - {x: 883.8867, y: 219.83894}
+      - {x: 859.27734, y: 245.46121}
+    - - {x: 273.7793, y: 216.76428}
+      - {x: 272.7539, y: 190.11713}
+      - {x: 285.0586, y: 184.99268}
+      - {x: 322.99805, y: 169.61932}
+      - {x: 271.72852, y: 170.64423}
+      - {x: 271.72852, y: 121.44949}
+      - {x: 358.88672, y: -64.05564}
+      - {x: 470.6543, y: -64.05564}
+      - {x: 470.6543, y: 146.04686}
+      - {x: 383.4961, y: 216.76428}
+    - - {x: -924.90234, y: 201.39093}
+      - {x: -931.0547, y: 192.16692}
+      - {x: -931.0547, y: 70.20498}
+      - {x: -884.9121, y: -49.707176}
+      - {x: -721.875, y: -49.707176}
+      - {x: -715.72266, y: -15.885798}
+      - {x: -715.72266, y: 184.99268}
+      - {x: -764.9414, y: 201.39093}
+    - - {x: -440.91797, y: 169.61932}
+      - {x: -545.5078, y: 169.61932}
+      - {x: -616.25977, y: 110.1757}
+      - {x: -616.25977, y: 11.786238}
+      - {x: -612.1582, y: -5.636896}
+      - {x: -569.0918, y: -16.910688}
+      - {x: -375.29297, y: -16.910688}
+      - {x: -273.7793, y: 14.8609085}
+      - {x: -273.7793, y: 105.05125}
+      - {x: -349.6582, y: 154.24597}
+    - - {x: -191.74805, y: 110.1757}
+      - {x: -191.74805, y: -9.736457}
+      - {x: 164.0625, y: -9.736457}
+      - {x: 164.0625, y: 161.42021}
+      - {x: -57.421875, y: 161.42021}
+      - {x: -101.51367, y: 151.17131}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pngegg_0: -1499987768
+      pngegg_1: 1014245835
+      pngegg_2: 1965432581
+      pngegg_3: -1632960392
+      pngegg_4: -152898520
+      pngegg_5: -683541254
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
