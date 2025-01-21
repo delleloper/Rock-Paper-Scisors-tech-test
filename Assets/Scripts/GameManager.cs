@@ -63,7 +63,6 @@ namespace Delleloper.RPSTechTest
                 gameOver = true;
                 onGameOver.Invoke();
             }
-
         }
 
         public PlayType GetCPUChoice()
