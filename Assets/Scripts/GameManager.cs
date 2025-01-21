@@ -7,13 +7,10 @@ namespace Delleloper.RPSTechTest
 {
     public class GameManager : MonoBehaviour
     {
-        public int PlayerScore { get; private set; } = 0;
-        public int CpuScore { get; private set; } = 0;
         public bool IsClassic { get; private set; } = true;
         public string AnimationTrigger { get; private set; }
         public static GameManager Instance;
         public int Games { get; private set; } = 5;
-        private bool gameOver = false;
         public UnityEvent updateScore;
         public UnityEvent onGameOver;
 
@@ -29,15 +26,6 @@ namespace Delleloper.RPSTechTest
                 Destroy(gameObject);
             }
 
-            Reset();
-        }
-
-        public void Reset()
-        {
-            PlayerScore = 0;
-            CpuScore = 0;
-            gameOver = false;
-            Games = 5;
         }
 
         public PlayType GetCPUChoice()

@@ -57,11 +57,6 @@ namespace Delleloper.RPSTechTest
             UpdateValues();
         }
 
-
-
-
-
-
         public void UpdateValues()
         {
             playerScoreLabel.text = playerScore.ToString();
