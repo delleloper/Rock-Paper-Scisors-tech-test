@@ -10,9 +10,8 @@ namespace Delleloper.RPSTechTest
         public int PlayerScore { get; private set; } = 0;
         public int CpuScore { get; private set; } = 0;
         public bool IsClassic { get; private set; } = true;
+        public string AnimationTrigger { get; private set; }
         public static GameManager Instance;
-        private PlayType playerChoice;
-        private PlayType CPUChoice;
         public int Games { get; private set; } = 5;
         private bool gameOver = false;
         public UnityEvent updateScore;
@@ -41,30 +40,6 @@ namespace Delleloper.RPSTechTest
             Games = 5;
         }
 
-        public void PlayerChoice(PlayType play)
-        {
-            playerChoice = play;
-            CPUChoice = GetCPUChoice();
-            Games -= 1;
-            int result = GetResult();
-
-            if (result == 1)
-            {
-                PlayerScore += 1;
-            }
-            else if (result == 0)
-            {
-                CpuScore += 1;
-            }
-
-            updateScore.Invoke();
-            if (Games == 0)
-            {
-                gameOver = true;
-                onGameOver.Invoke();
-            }
-        }
-
         public PlayType GetCPUChoice()
         {
             int choices;
@@ -82,14 +57,15 @@ namespace Delleloper.RPSTechTest
             return result;
         }
 
+
         // if player wins this function returns 1
         // if player loses returns 0
         // if tie returns -1
-        public int GetResult()
+        public int GetResult(PlayType human, PlayType cpu)
         {
-            Debug.Log($"HUMAN PLAYS: {Enum.GetName(typeof(PlayType), playerChoice)} ");
-            Debug.Log($"CPU PLAYS: {Enum.GetName(typeof(PlayType), CPUChoice)} ");
-            if (playerChoice == CPUChoice)
+            Debug.Log($"HUMAN PLAYS: {Enum.GetName(typeof(PlayType), human)} ");
+            Debug.Log($"CPU PLAYS: {Enum.GetName(typeof(PlayType), cpu)} ");
+            if (human == cpu)
             {
                 Debug.Log("TIE");
                 return -1;
@@ -104,7 +80,7 @@ namespace Delleloper.RPSTechTest
             };
 
 
-            if (!loseConditions[playerChoice].Contains(CPUChoice))
+            if (!loseConditions[human].Contains(cpu))
             {
                 Debug.Log("HUMAN WINS");
                 return 1;
@@ -115,15 +91,23 @@ namespace Delleloper.RPSTechTest
                 return 0;
             }
         }
-
-        public void ShowPlays()
-        {
-
-        }
-
         public void SetGameType(bool classic)
         {
             IsClassic = classic;
+        }
+
+        public void GameOver()
+        {
+           Debug.Log("GAME OVER");
+        }
+
+        public void DecreaseGamesCount()
+        {
+            Games -= 1;
+            if (Games == 0)
+            {
+                GameOver();
+            }
         }
     }
 

@@ -6,9 +6,9 @@ namespace Delleloper.RPSTechTest
     public class PlayButton : MonoBehaviour
     {
         public PlayType type;
-        public Sprite[] sprites;
         [SerializeField] private Image image;
         private Button button;
+
         public void Awake()
         {
             if (GameManager.Instance.IsClassic)
@@ -19,21 +19,14 @@ namespace Delleloper.RPSTechTest
                     return;
                 }
             }
+        }
+
+        public void setup(Sprite sprite, PlayType playType, System.Action<PlayType> playerChoice)
+        {
+            image.sprite = sprite;
+            type = playType;
             button = GetComponent<Button>();
-        }
-
-        public void Start()
-        {
-            if ((int)type < sprites.Length)
-            {
-                image.sprite = sprites[(int)type];
-            }
-            button.onClick.AddListener(OnPressed);
-        }
-
-        private void OnPressed()
-        {
-            GameManager.Instance.PlayerChoice(type);
+            button.onClick.AddListener(() => { playerChoice.Invoke(type); });
         }
     }
 
