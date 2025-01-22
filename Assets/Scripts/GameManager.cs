@@ -90,13 +90,13 @@ namespace Delleloper.RPSTechTest
 
         public void DecreaseGamesCount()
         {
+            if (Games > 0)
+            {
+                Games -= 1;
+            }
             if (Games == 0)
             {
                 GameOver();
-            }
-            else
-            {
-                Games -= 1;
             }
         }
 

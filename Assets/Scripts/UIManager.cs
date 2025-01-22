@@ -34,7 +34,7 @@ namespace Delleloper.RPSTechTest
         const string HUMAN_WIN = "Human wins!";
         const string CPU_WIN = "CPU wins!";
         const string TIE = "Tied!";
-
+        private bool clickEnabled = true;
 
         public void Awake()
         {
@@ -66,6 +66,8 @@ namespace Delleloper.RPSTechTest
             {
                 StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, true, 0.5f));
             }
+            clickEnabled = true;
+
         }
         public void GameOverAnimation()
         {
@@ -94,6 +96,12 @@ namespace Delleloper.RPSTechTest
 
         public void PlayerChoice(PlayType play)
         {
+            if (!clickEnabled)
+            {
+                return;
+            }
+
+            clickEnabled = false;
             playerChoice = play;
             CPUChoice = GameManager.Instance.GetCPUChoice();
             playerHand.sprite = sprites[(int)playerChoice];
