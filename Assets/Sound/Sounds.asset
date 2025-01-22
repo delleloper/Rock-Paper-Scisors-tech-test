@@ -62,8 +62,14 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 2cb491a36c6e8704d8bf90cdabb1e66f, type: 3}
   - name: MUSIC
-    volume: 0.401
+    volume: 0.25
     pitch: 1
     mixer: {fileID: -6492286018757622632, guid: a7f5ecd1728b3ef44b322df58e4c0e5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 258a26411192ab4479cb0eacbee955d5, type: 3}
+  - name: HAND
+    volume: 1
+    pitch: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: d887b383ed4b5cf468d2613f5d18b2cc, type: 3}
