@@ -1,16 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Delleloper.RPSTechTest;
-using UnityEditor.SearchService;
+using Delleloper.RPSTechTest.Common;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour
+namespace Delleloper.RPSTechTest
 {
-    public void StartGame(bool regularGame)
+    public class MenuManager : MonoBehaviour
     {
-        GameManager.Instance.SetGameType(regularGame);
-        SceneManager.LoadScene(1);
+        public void StartGame(bool regularGame)
+        {
+            GameManager.Instance.SetGameType(regularGame);
+            SceneManager.LoadScene(1);
+            AudioManager.Instance.PlaySfx(SoundType.BUTTON);
+        }
     }
 }

@@ -74,10 +74,13 @@ namespace Delleloper.RPSTechTest
             if (PlayerScore > CpuScore)
             {
                 winnerLabel.text = HUMAN_WIN;
+                AudioManager.Instance.PlaySfx(SoundType.GAMEOVER_WIN);
             }
             else if (CpuScore > PlayerScore)
             {
                 winnerLabel.text = CPU_WIN;
+                AudioManager.Instance.PlaySfx(SoundType.GAMEOVER_LOSE);
+
             }
             else
             {
