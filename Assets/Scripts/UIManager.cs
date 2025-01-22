@@ -21,6 +21,7 @@ namespace Delleloper.RPSTechTest
         [SerializeField] private CanvasGroup buttonCanvasGroup;
         [SerializeField] private CanvasGroup GameOverCanvasGroup;
         [SerializeField] private TextMeshProUGUI winnerLabel;
+        [SerializeField] private Button ResetButton;
 
         public Sprite[] sprites;
         private PlayType playerChoice;
@@ -53,6 +54,8 @@ namespace Delleloper.RPSTechTest
             // GameManager.Instance.onGameOver.AddListener(GameOverAnimation);
             GameManager.Instance.SetGames(5);
             UpdateValues();
+            ResetButton.gameObject.SetActive(false);
+
         }
 
         public void AnimationEnded()
@@ -67,6 +70,7 @@ namespace Delleloper.RPSTechTest
                 StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, true, 0.5f));
             }
             clickEnabled = true;
+            ResetButton.gameObject.SetActive(true);
 
         }
         public void GameOverAnimation()
@@ -141,6 +145,7 @@ namespace Delleloper.RPSTechTest
         public void Reset()
         {
             PlayerScore = 0;
+            ResetButton.gameObject.SetActive(false);
             CpuScore = 0;
             GameManager.Instance.SetGames(5);
             GameManager.Instance.gameOver = false;

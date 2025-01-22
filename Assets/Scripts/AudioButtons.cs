@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using Delleloper.RPSTechTest.Common;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
 namespace Delleloper.RPSTechTest
 {
     public class AudioButtons : MonoBehaviour
