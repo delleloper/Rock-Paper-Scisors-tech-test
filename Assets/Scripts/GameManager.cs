@@ -45,16 +45,16 @@ namespace Delleloper.RPSTechTest
         // if player wins this function returns 1
         // if player loses returns 0
         // if tie returns -1
-        public int GetResult(PlayType human, PlayType cpu)
+        public int GetResult(PlayType humanPick, PlayType cpuPick)
         {
-            Debug.Log($"HUMAN PLAYS: {Enum.GetName(typeof(PlayType), human)} ");
-            Debug.Log($"CPU PLAYS: {Enum.GetName(typeof(PlayType), cpu)} ");
-            if (human == cpu)
+            Debug.Log($"HUMAN PLAYS: {Enum.GetName(typeof(PlayType), humanPick)} ");
+            Debug.Log($"CPU PLAYS: {Enum.GetName(typeof(PlayType), cpuPick)} ");
+            if (humanPick == cpuPick)
             {
                 Debug.Log("TIE");
                 return -1;
             }
-            var loseConditions = new Dictionary<PlayType, List<PlayType>>()
+            Dictionary<PlayType, List<PlayType>> loseConditions = new Dictionary<PlayType, List<PlayType>>()
             {
                 { PlayType.ROCK, new List<PlayType> { PlayType.PAPER, PlayType.SPOCK } },
                 { PlayType.PAPER, new List<PlayType> { PlayType.SCISORS, PlayType.LIZARD } },
@@ -64,7 +64,7 @@ namespace Delleloper.RPSTechTest
             };
 
 
-            if (!loseConditions[human].Contains(cpu))
+            if (!loseConditions[humanPick].Contains(cpuPick))
             {
                 Debug.Log("HUMAN WINS");
                 return 1;
@@ -83,7 +83,6 @@ namespace Delleloper.RPSTechTest
         public void GameOver()
         {
             Debug.Log("GAME OVER");
-            // onGameOver.Invoke();
             gameOver = true;
         }
 

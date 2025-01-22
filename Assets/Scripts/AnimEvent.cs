@@ -10,6 +10,7 @@ namespace Delleloper.RPSTechTest
         {
             uIManager.AnimationEnded();
         }
+        
         public void CountdownSound()
         {
             AudioManager.Instance.PlaySfx(SoundType.COUNTDOWN);
@@ -18,25 +19,21 @@ namespace Delleloper.RPSTechTest
         public void CountdownEndSound()
         {
             AudioManager.Instance.PlaySfx(SoundType.COUNTDOWN_END);
-
         }
 
         public void HumanWin()
         {
             AudioManager.Instance.PlaySfx(SoundType.WIN);
-
         }
 
         public void Humanlose()
         {
             AudioManager.Instance.PlaySfx(SoundType.LOSE);
-
         }
 
         public void Tie()
         {
             AudioManager.Instance.PlaySfx(SoundType.TIE);
-
         }
 
     }

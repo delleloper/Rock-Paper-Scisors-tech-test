@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,8 +20,7 @@ namespace Delleloper.RPSTechTest
         [SerializeField] private CanvasGroup GameOverCanvasGroup;
         [SerializeField] private TextMeshProUGUI winnerLabel;
         [SerializeField] private Button ResetButton;
-
-        public Sprite[] sprites;
+        [SerializeField] private Sprite[] sprites;
         private PlayType playerChoice;
         private PlayType CPUChoice;
         public int PlayerScore { get; private set; }
@@ -53,7 +50,6 @@ namespace Delleloper.RPSTechTest
             GameManager.Instance.SetGames(5);
             UpdateValues();
             ResetButton.gameObject.SetActive(false);
-
         }
 
         public void AnimationEnded()
@@ -73,6 +69,7 @@ namespace Delleloper.RPSTechTest
         }
         public void GameOverAnimation()
         {
+            ResetButton.gameObject.SetActive(false);
             if (PlayerScore > CpuScore)
             {
                 winnerLabel.text = HUMAN_WIN;
@@ -82,7 +79,6 @@ namespace Delleloper.RPSTechTest
             {
                 winnerLabel.text = CPU_WIN;
                 AudioManager.Instance.PlaySfx(SoundType.GAMEOVER_LOSE);
-
             }
             else
             {
@@ -105,6 +101,7 @@ namespace Delleloper.RPSTechTest
             {
                 return;
             }
+            ResetButton.gameObject.SetActive(false);
             AudioManager.Instance.PlaySfx(SoundType.HAND);
             clickEnabled = false;
             playerChoice = play;

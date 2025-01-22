@@ -8,7 +8,6 @@ namespace Delleloper.RPSTechTest
     {
         [SerializeField] private Button musicButton;
         [SerializeField] private Button sfxButton;
-
         [SerializeField] private Image musicSprite;
         [SerializeField] private Image sfxSprite;
         [SerializeField] private Sprite sfxSpriteOn;

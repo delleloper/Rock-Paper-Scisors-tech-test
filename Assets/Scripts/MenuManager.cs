@@ -1,6 +1,4 @@
-using Delleloper.RPSTechTest;
 using Delleloper.RPSTechTest.Common;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +10,7 @@ namespace Delleloper.RPSTechTest
         {
             AudioManager.Instance.PlayMusic(SoundType.MUSIC);
         }
-        
+
         public void StartGame(bool regularGame)
         {
             GameManager.Instance.SetGameType(regularGame);

@@ -13,8 +13,8 @@ namespace Delleloper.RPSTechTest.Common
         public AudioMixerGroup mixer;
         public AudioClip[] sounds;
     }
+    
     [CreateAssetMenu(fileName = "Sounds SO")]
-
     public class SoundsSO : ScriptableObject
     {
         public SoundList[] sounds;

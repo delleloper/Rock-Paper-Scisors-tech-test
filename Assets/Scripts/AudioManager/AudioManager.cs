@@ -88,10 +88,14 @@ namespace Delleloper.RPSTechTest.Common
                 }
             }
         }
+
         public void ToggleMusic()
         {
             MusicEnabled = !MusicEnabled;
-            musicSource.mute = !MusicEnabled;
+            if (musicSource != null)
+            {
+                musicSource.mute = !MusicEnabled;
+            }
         }
     }
 
