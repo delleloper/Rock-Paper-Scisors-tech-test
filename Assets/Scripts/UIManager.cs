@@ -50,8 +50,6 @@ namespace Delleloper.RPSTechTest
                 }
                 i += 1;
             }
-
-            // GameManager.Instance.onGameOver.AddListener(GameOverAnimation);
             GameManager.Instance.SetGames(5);
             UpdateValues();
             ResetButton.gameObject.SetActive(false);
@@ -107,7 +105,7 @@ namespace Delleloper.RPSTechTest
             {
                 return;
             }
-
+            AudioManager.Instance.PlaySfx(SoundType.HAND);
             clickEnabled = false;
             playerChoice = play;
             CPUChoice = GameManager.Instance.GetCPUChoice();
@@ -139,11 +137,13 @@ namespace Delleloper.RPSTechTest
 
         public void GoToMain()
         {
+            AudioManager.Instance.PlaySfx(SoundType.BUTTON);
             SceneManager.LoadScene(0);
         }
 
         public void Reset()
         {
+            AudioManager.Instance.PlaySfx(SoundType.BUTTON);
             PlayerScore = 0;
             ResetButton.gameObject.SetActive(false);
             CpuScore = 0;

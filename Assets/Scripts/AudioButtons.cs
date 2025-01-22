@@ -26,12 +26,14 @@ namespace Delleloper.RPSTechTest
         {
             AudioManager.Instance.ToggleMusic();
             musicSprite.sprite = AudioManager.Instance.MusicEnabled ? MusicSpriteOn : MusicSpriteOff;
+            AudioManager.Instance.PlaySfx(SoundType.BUTTON);
         }
 
         private void SfxClick()
         {
             AudioManager.Instance.ToggleSfx();
             sfxSprite.sprite = AudioManager.Instance.SfxEnabled ? sfxSpriteOn : sfxSpriteOff;
+            AudioManager.Instance.PlaySfx(SoundType.BUTTON);
         }
     }
 }
