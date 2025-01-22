@@ -11,7 +11,8 @@ namespace Delleloper.RPSTechTest.Common
         public bool SfxEnabled { get; private set; } = true;
         public bool MusicEnabled { get; private set; } = true;
         private AudioSource[] sfxSources = { };
-        private AudioSource[] musicSources = { };
+        private AudioSource musicSource;
+        private SoundType currentMusic;
 
         private void Awake()
         {
@@ -41,10 +42,16 @@ namespace Delleloper.RPSTechTest.Common
 
         public void PlayMusic(SoundType sound, float volume = 1.0f)
         {
+            if (currentMusic == sound)
+            {
+                return;
+            }
+
             SoundList soundList = Instance.SO.sounds[(int)sound];
             AudioSource audioSource = CreateAudioSource(soundList, volume, true);
             audioSource.mute = !MusicEnabled;
-            musicSources.Append(audioSource);
+            musicSource = audioSource;
+            currentMusic = sound;
             audioSource.Play();
         }
 
@@ -77,20 +84,14 @@ namespace Delleloper.RPSTechTest.Common
             {
                 if (item != null)
                 {
-                    item.mute = SfxEnabled;
+                    item.mute = !SfxEnabled;
                 }
             }
         }
         public void ToggleMusic()
         {
             MusicEnabled = !MusicEnabled;
-            foreach (AudioSource item in musicSources)
-            {
-                if (item != null)
-                {
-                    item.mute = MusicEnabled;
-                }
-            }
+            musicSource.mute = !MusicEnabled;
         }
     }
 

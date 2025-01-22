@@ -8,6 +8,11 @@ namespace Delleloper.RPSTechTest
 {
     public class MenuManager : MonoBehaviour
     {
+        public void Start()
+        {
+            AudioManager.Instance.PlayMusic(SoundType.MUSIC);
+        }
+        
         public void StartGame(bool regularGame)
         {
             GameManager.Instance.SetGameType(regularGame);

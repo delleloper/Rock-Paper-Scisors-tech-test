@@ -21,33 +21,49 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4afe6e667e590d24596a226e3f845e03, type: 3}
   - name: COUNTDOWN_END
     volume: 1
-    pitch: 3
+    pitch: 1
     mixer: {fileID: 4558312321996414035, guid: a7f5ecd1728b3ef44b322df58e4c0e5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 4afe6e667e590d24596a226e3f845e03, type: 3}
+    - {fileID: 8300000, guid: c2c9efc752376a543ab31693b5cefc6e, type: 3}
   - name: WIN
-    volume: 1
+    volume: 0.1
     pitch: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 22b3c9b782f02324ba6bceb89e438425, type: 3}
   - name: LOSE
-    volume: 1
+    volume: 0.1
     pitch: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 7b0a2e41b64d69248bdd815c15ffb730, type: 3}
   - name: GAMEOVER_WIN
-    volume: 1
+    volume: 0.1
     pitch: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 17e6b746daa6bb74d8a88ea4be08684e, type: 3}
   - name: GAMEOVER_LOSE
-    volume: 1
+    volume: 0.1
     pitch: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 134c996a4381fe644b4df1ad748a4299, type: 3}
   - name: BUTTON
     volume: 1
     pitch: 1
     mixer: {fileID: 0}
     sounds:
     - {fileID: 8300000, guid: 5de771df3113fa94a9e38f9ea81d201a, type: 3}
+  - name: TIE
+    volume: 0.1
+    pitch: 1
+    mixer: {fileID: 4558312321996414035, guid: a7f5ecd1728b3ef44b322df58e4c0e5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 2cb491a36c6e8704d8bf90cdabb1e66f, type: 3}
+  - name: MUSIC
+    volume: 0.401
+    pitch: 1
+    mixer: {fileID: -6492286018757622632, guid: a7f5ecd1728b3ef44b322df58e4c0e5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 258a26411192ab4479cb0eacbee955d5, type: 3}
