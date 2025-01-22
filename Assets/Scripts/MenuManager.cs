@@ -11,6 +11,6 @@ public class MenuManager : MonoBehaviour
     public void StartGame(bool regularGame)
     {
         GameManager.Instance.SetGameType(regularGame);
-       SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 }

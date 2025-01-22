@@ -9,7 +9,7 @@ namespace Delleloper.RPSTechTest
         [SerializeField] private Image image;
         private Button button;
 
-        public void setup(Sprite sprite, PlayType playType, System.Action<PlayType> playerChoice)
+        public void Setup(Sprite sprite, PlayType playType, System.Action<PlayType> playerChoice)
         {
             image.sprite = sprite;
             type = playType;
@@ -17,5 +17,4 @@ namespace Delleloper.RPSTechTest
             button.onClick.AddListener(() => { playerChoice.Invoke(type); });
         }
     }
-
 }

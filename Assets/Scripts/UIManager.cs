@@ -24,21 +24,19 @@ namespace Delleloper.RPSTechTest
         public Sprite[] sprites;
         private PlayType playerChoice;
         private PlayType CPUChoice;
-        public int playerScore { get; private set; }
-        public int cpuScore { get; private set; }
+        public int PlayerScore { get; private set; }
+        public int CpuScore { get; private set; }
 
-        private bool gameOver = false;
         const string CPU_WIN = "cpuWin";
         const string HUMAN_WIN = "humanWin";
         const string TIE = "tie";
 
         public void Awake()
         {
-
             int i = 0;
             foreach (RectTransform child in buttons)
             {
-                child.GetComponent<PlayButton>().setup(sprites[i], (PlayType)i, PlayerChoice);
+                child.GetComponent<PlayButton>().Setup(sprites[i], (PlayType)i, PlayerChoice);
 
                 if (i >= 3 && GameManager.Instance.IsClassic)
                 {
@@ -47,20 +45,21 @@ namespace Delleloper.RPSTechTest
                 i += 1;
             }
 
-            GameManager.Instance.onGameOver.AddListener(() =>
-            {
-                StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, false, 1.0f));
-                StartCoroutine(Utils.AnimateFade(GameOverCanvasGroup, true, 2.0f));
-
-            });
+            GameManager.Instance.onGameOver.AddListener(GameOverAnimation);
             GameManager.Instance.SetGames(5);
             UpdateValues();
         }
 
+        public void GameOverAnimation()
+        {
+            StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, false, 1.0f));
+            StartCoroutine(Utils.AnimateFade(GameOverCanvasGroup, true, 2.0f));
+        }
+
         public void UpdateValues()
         {
-            playerScoreLabel.text = playerScore.ToString();
-            cpuScoreLabel.text = cpuScore.ToString();
+            playerScoreLabel.text = PlayerScore.ToString();
+            cpuScoreLabel.text = CpuScore.ToString();
             gamesLabel.text = GameManager.Instance.Games.ToString();
         }
 
@@ -76,12 +75,12 @@ namespace Delleloper.RPSTechTest
 
             if (result == 1)
             {
-                playerScore += 1;
+                PlayerScore += 1;
                 triggerName = HUMAN_WIN;
             }
             else if (result == 0)
             {
-                cpuScore += 1;
+                CpuScore += 1;
                 triggerName = CPU_WIN;
             }
             else
@@ -101,15 +100,12 @@ namespace Delleloper.RPSTechTest
 
         public void Reset()
         {
-
-            playerScore = 0;
-            cpuScore = 0;
+            PlayerScore = 0;
+            CpuScore = 0;
             GameManager.Instance.SetGames(5);
             UpdateValues();
             StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, true, 0.5f));
             StartCoroutine(Utils.AnimateFade(GameOverCanvasGroup, false, 0.5f));
         }
-
-
     }
 }

@@ -87,6 +87,7 @@ namespace Delleloper.RPSTechTest
         public void GameOver()
         {
             Debug.Log("GAME OVER");
+            Debug.Log(onGameOver.GetPersistentEventCount());
             onGameOver.Invoke();
         }
 

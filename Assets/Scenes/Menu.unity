@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Big bang theory variant
+  m_text: Play 5 hands variant
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8917a8c80ac7da4ca50c18ebc480b60, type: 2}
   m_sharedMaterial: {fileID: -454338241181900032, guid: b8917a8c80ac7da4ca50c18ebc480b60, type: 2}
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Clasic
+  m_text: Play Classic
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8917a8c80ac7da4ca50c18ebc480b60, type: 2}
   m_sharedMaterial: {fileID: -454338241181900032, guid: b8917a8c80ac7da4ca50c18ebc480b60, type: 2}
