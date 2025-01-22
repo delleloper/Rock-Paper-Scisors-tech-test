@@ -20,6 +20,7 @@ namespace Delleloper.RPSTechTest
         [SerializeField] private TextMeshProUGUI gamesCountLabel;
         [SerializeField] private CanvasGroup buttonCanvasGroup;
         [SerializeField] private CanvasGroup GameOverCanvasGroup;
+        [SerializeField] private TextMeshProUGUI winnerLabel;
 
         public Sprite[] sprites;
         private PlayType playerChoice;
@@ -27,9 +28,13 @@ namespace Delleloper.RPSTechTest
         public int PlayerScore { get; private set; }
         public int CpuScore { get; private set; }
 
-        const string CPU_WIN = "cpuWin";
-        const string HUMAN_WIN = "humanWin";
-        const string TIE = "tie";
+        const string CPU_WIN_TRIGGER = "cpuWin";
+        const string HUMAN_WIN_TRIGGER = "humanWin";
+        const string TIE_TRIGGER = "tie";
+        const string HUMAN_WIN = "Human wins!";
+        const string CPU_WIN = "CPU wins!";
+        const string TIE = "Tied!";
+
 
         public void Awake()
         {
@@ -45,15 +50,39 @@ namespace Delleloper.RPSTechTest
                 i += 1;
             }
 
-            GameManager.Instance.onGameOver.AddListener(GameOverAnimation);
+            // GameManager.Instance.onGameOver.AddListener(GameOverAnimation);
             GameManager.Instance.SetGames(5);
             UpdateValues();
         }
 
+        public void AnimationEnded()
+        {
+            UpdateValues();
+            if (GameManager.Instance.gameOver)
+            {
+                GameOverAnimation();
+            }
+            else
+            {
+                StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, true, 0.5f));
+            }
+        }
         public void GameOverAnimation()
         {
+            if (PlayerScore > CpuScore)
+            {
+                winnerLabel.text = HUMAN_WIN;
+            }
+            else if (CpuScore > PlayerScore)
+            {
+                winnerLabel.text = CPU_WIN;
+            }
+            else
+            {
+                winnerLabel.text = TIE;
+            }
             StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, false, 1.0f));
-            StartCoroutine(Utils.AnimateFade(GameOverCanvasGroup, true, 2.0f));
+            StartCoroutine(Utils.AnimateFade(GameOverCanvasGroup, true, 1.0f));
         }
 
         public void UpdateValues()
@@ -76,21 +105,21 @@ namespace Delleloper.RPSTechTest
             if (result == 1)
             {
                 PlayerScore += 1;
-                triggerName = HUMAN_WIN;
+                triggerName = HUMAN_WIN_TRIGGER;
             }
             else if (result == 0)
             {
                 CpuScore += 1;
-                triggerName = CPU_WIN;
+                triggerName = CPU_WIN_TRIGGER;
             }
             else
             {
-                triggerName = TIE;
+                triggerName = TIE_TRIGGER;
             }
 
             animator.SetTrigger(triggerName);
             GameManager.Instance.DecreaseGamesCount();
-            UpdateValues();
+            StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, false, 0.5f));
         }
 
         public void GoToMain()
@@ -103,6 +132,7 @@ namespace Delleloper.RPSTechTest
             PlayerScore = 0;
             CpuScore = 0;
             GameManager.Instance.SetGames(5);
+            GameManager.Instance.gameOver = false;
             UpdateValues();
             StartCoroutine(Utils.AnimateFade(buttonCanvasGroup, true, 0.5f));
             StartCoroutine(Utils.AnimateFade(GameOverCanvasGroup, false, 0.5f));

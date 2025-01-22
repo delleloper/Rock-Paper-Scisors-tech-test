@@ -8,11 +8,9 @@ namespace Delleloper.RPSTechTest
     public class GameManager : MonoBehaviour
     {
         public bool IsClassic { get; private set; } = true;
-        public string AnimationTrigger { get; private set; }
         public static GameManager Instance;
         public int Games { get; private set; } = 5;
-        public UnityEvent updateScore;
-        public UnityEvent onGameOver;
+        public bool gameOver = false;
 
         public void Awake()
         {
@@ -25,7 +23,6 @@ namespace Delleloper.RPSTechTest
             {
                 Destroy(gameObject);
             }
-
         }
 
         public PlayType GetCPUChoice()
@@ -87,8 +84,8 @@ namespace Delleloper.RPSTechTest
         public void GameOver()
         {
             Debug.Log("GAME OVER");
-            Debug.Log(onGameOver.GetPersistentEventCount());
-            onGameOver.Invoke();
+            // onGameOver.Invoke();
+            gameOver = true;
         }
 
         public void DecreaseGamesCount()
@@ -105,6 +102,7 @@ namespace Delleloper.RPSTechTest
 
         public void SetGames(int value)
         {
+            gameOver = false;
             Games = value;
         }
     }
